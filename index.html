@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Ye Ko Htet | Network/System Engineer</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: #0b1120;
+        color: white;
+        overflow-x: hidden;
+      }
+
+      /* =========================
+   NAVBAR
+========================= */
+
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgba(11, 17, 32, 0.92);
+        backdrop-filter: blur(12px);
+        z-index: 1000;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: 800;
+        color: #38bdf8;
+        letter-spacing: 1px;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+        font-weight: 500;
+      }
+
+      .nav-links a:hover {
+        color: #38bdf8;
+      }
+
+      /* =========================
+   HERO SECTION
+========================= */
+
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 120px 8%;
+        gap: 60px;
+      }
+
+      .hero-text {
+        flex: 1;
+      }
+
+      .hero-text h3 {
+        color: #38bdf8;
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+
+      .hero-text h1 {
+        font-size: 72px;
+        line-height: 1.1;
+        margin-bottom: 20px;
+      }
+
+      .hero-text h1 span {
+        color: #38bdf8;
+      }
+
+      .hero-text p {
+        color: #cbd5e1;
+        line-height: 1.9;
+        max-width: 650px;
+        margin-bottom: 35px;
+        font-size: 17px;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 16px 34px;
+        border-radius: 14px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.3s;
+        display: inline-block;
+      }
+
+      .primary-btn {
+        background: #38bdf8;
+        color: #0b1120;
+      }
+
+      .primary-btn:hover {
+        background: #0ea5e9;
+        transform: translateY(-5px);
+      }
+
+      .secondary-btn {
+        border: 2px solid #38bdf8;
+        color: #38bdf8;
+      }
+
+      .secondary-btn:hover {
+        background: #38bdf8;
+        color: #0b1120;
+        transform: translateY(-5px);
+      }
+
+      /* PROFILE IMAGE */
+
+      .hero-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero-image img {
+        width: 380px;
+        height: 380px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 6px solid #38bdf8;
+        box-shadow:
+          0 0 25px rgba(56, 189, 248, 0.5),
+          0 0 60px rgba(56, 189, 248, 0.25);
+        animation: float 4s ease-in-out infinite;
+        transition: 0.4s;
+      }
+
+      .hero-image img:hover {
+        transform: scale(1.04);
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
+      /* =========================
+   GENERAL SECTION
+========================= */
+
+      section {
+        padding: 100px 8%;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 70px;
+      }
+
+      .section-title h2 {
+        font-size: 48px;
+        margin-bottom: 10px;
+      }
+
+      .section-title p {
+        color: #94a3b8;
+        font-size: 17px;
+      }
+
+      /* =========================
+   ABOUT
+========================= */
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+      }
+
+      .about-card {
+        background: #111827;
+        padding: 40px;
+        border-radius: 24px;
+        transition: 0.4s;
+      }
+
+      .about-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+      }
+
+      .about-card h3 {
+        color: #38bdf8;
+        margin-bottom: 20px;
+        font-size: 28px;
+      }
+
+      .about-card p {
+        color: #cbd5e1;
+        line-height: 1.9;
+      }
+
+      /* =========================
+   SKILLS
+========================= */
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 25px;
+      }
+
+      .skill-card {
+        background: #111827;
+        padding: 35px;
+        border-radius: 22px;
+        transition: 0.4s;
+      }
+
+      .skill-card:hover {
+        background: #38bdf8;
+        color: #0b1120;
+        transform: translateY(-10px);
+      }
+
+      .skill-card h3 {
+        margin-bottom: 15px;
+        font-size: 22px;
+      }
+
+      .skill-card p {
+        line-height: 1.8;
+      }
+
+      /* =========================
+   EXPERIENCE TIMELINE
+========================= */
+
+      .timeline {
+        position: relative;
+        max-width: 1100px;
+        margin: auto;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        width: 4px;
+        height: 100%;
+        background: #38bdf8;
+        transform: translateX(-50%);
+      }
+
+      .timeline-item {
+        width: 50%;
+        padding: 30px;
+        position: relative;
+      }
+
+      .timeline-item:nth-child(odd) {
+        left: 0;
+        text-align: right;
+      }
+
+      .timeline-item:nth-child(even) {
+        left: 50%;
+      }
+
+      .timeline-content {
+        background: #111827;
+        padding: 30px;
+        border-radius: 24px;
+        transition: 0.4s;
+      }
+
+      .timeline-content:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      }
+
+      .timeline-content h3 {
+        color: #38bdf8;
+        margin-bottom: 10px;
+        font-size: 24px;
+      }
+
+      .timeline-content h4 {
+        margin-bottom: 15px;
+        color: #f8fafc;
+      }
+
+      .timeline-content p {
+        color: #cbd5e1;
+        line-height: 1.9;
+      }
+
+      /* =========================
+   CERTIFICATIONS
+========================= */
+
+      .cert-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+      }
+
+      .cert-card {
+        background: #111827;
+        padding: 35px;
+        border-radius: 22px;
+        text-align: center;
+        transition: 0.4s;
+      }
+
+      .cert-card:hover {
+        background: #38bdf8;
+        color: #0b1120;
+        transform: translateY(-10px);
+      }
+
+      .cert-card h3 {
+        margin-bottom: 10px;
+        font-size: 26px;
+      }
+
+      /* =========================
+   CONTACT
+========================= */
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+      }
+
+      .contact-card {
+        background: #111827;
+        padding: 40px;
+        border-radius: 24px;
+        transition: 0.4s;
+      }
+
+      .contact-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .contact-card h3 {
+        color: #38bdf8;
+        margin-bottom: 20px;
+        font-size: 28px;
+      }
+
+      .contact-card p {
+        color: #cbd5e1;
+        margin-bottom: 15px;
+        line-height: 1.8;
+      }
+
+      /* =========================
+   FOOTER
+========================= */
+
+      footer {
+        text-align: center;
+        padding: 40px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        color: #94a3b8;
+      }
+
+      /* =========================
+   RESPONSIVE
+========================= */
+
+      @media (max-width: 950px) {
+        .hero {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .hero-text h1 {
+          font-size: 54px;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .timeline::before {
+          left: 0;
+        }
+
+        .timeline-item {
+          width: 100%;
+          left: 0 !important;
+          text-align: left !important;
+          padding-left: 40px;
+        }
+
+        .hero-image img {
+          width: 300px;
+          height: 300px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =========================
+     NAVBAR
+========================= -->
+
+    <nav>
+      <div class="logo">YE KO HTET</div>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- =========================
+     HERO
+========================= -->
+
+    <section class="hero">
+      <div class="hero-text">
+        <h3>Network / System Engineer</h3>
+
+        <h1>Ye Ko <span>Htet</span></h1>
+
+        <p>
+          Network Engineer with 8 years of hands-on experience in enterprise
+          networking, system maintenance, infrastructure management, routing,
+          switching, network security, VPN connectivity, and server
+          administration. Experienced in troubleshooting infrastructure issues,
+          maintaining secure operations, and supporting enterprise production
+          environments.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#contact" class="btn primary-btn">Contact Me</a>
+          <a href="#experience" class="btn secondary-btn">View Experience</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="https://i.ibb.co/jFJvQps/ye.jpg" alt="ye" border="0" />
+      </div>
+    </section>
+
+    <!-- =========================
+     ABOUT
+========================= -->
+
+    <section id="about">
+      <div class="section-title">
+        <h2>About Me</h2>
+        <p>Professional Summary</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Profile</h3>
+
+          <p>
+            Experienced Network/System Engineer specializing in enterprise
+            networking, routing, switching technologies, SD-WAN, VPN
+            connectivity, network security, cloud infrastructure, server
+            administration, and IT infrastructure systems.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <h3>Education</h3>
+
+          <p>
+            Bachelor of Electronics and Communication Engineering
+            <br /><br />
+            Thanlyin Technological University — 2015
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     SKILLS
+========================= -->
+
+    <section id="skills">
+      <div class="section-title">
+        <h2>Technical Skills</h2>
+        <p>Technologies & Expertise</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Enterprise Networking</h3>
+          <p>Routing, Switching, SD-WAN, MPLS, OSPF, BGP, EIGRP</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Security & VPN</h3>
+          <p>Firewalls, ACLs, NAT, VPN Connectivity, Cisco ASA, Juniper SRX</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Cloud & Virtualization</h3>
+          <p>
+            Linux Administration, Proxmox, Virtual Infrastructure Management
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Infrastructure Systems</h3>
+          <p>
+            CCTV, VOIP, Structured Cabling, Technical Support & IT Operations
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     EXPERIENCE
+========================= -->
+
+    <section id="experience">
+      <div class="section-title">
+        <h2>Work Experience</h2>
+        <p>Professional Career Journey</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>Technology Information Specialist</h3>
+
+            <h4>Nerdtronics Thailand · 2025 - Present</h4>
+
+            <p>
+              Managed office IoT systems, VPN connectivity, server
+              administration, CCTV systems, network infrastructure, VOIP
+              services, Apple development environment, and operational
+              production support.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>Technical Support</h3>
+
+            <h4>Advance Telematics Solution · 2022 - 2023</h4>
+
+            <p>
+              Configured Cisco/Juniper devices, implemented MPLS/VPN solutions,
+              managed F5 load balancing, and supported enterprise LAN/WAN
+              infrastructures.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h3>Network Engineer</h3>
+
+            <h4>Ericsson Myanmar · 2016 - 2021</h4>
+
+            <p>
+              Provided L1/L2 support, configured Dell switches, Nuage routers,
+              F5 load balancers, Syslog servers, and monitored provider edge
+              routing systems.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     CERTIFICATIONS
+========================= -->
+
+    <section id="certifications">
+      <div class="section-title">
+        <h2>Certifications</h2>
+        <p>Professional Qualifications</p>
+      </div>
+
+      <div class="cert-grid">
+        <div class="cert-card">
+          <h3>CCNA</h3>
+
+          <p>Cisco Certified Network Associate — 2019</p>
+        </div>
+
+        <div class="cert-card">
+          <h3>CCNP</h3>
+
+          <p>Cisco Certified Network Professional — Ongoing</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     CONTACT
+========================= -->
+
+    <section id="contact">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <p>Get In Touch</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Contact Information</h3>
+
+          <p>📧 yekohtet.it@gmail.com</p>
+          <p>📱 +66 096 952 0345</p>
+          <p>📍 Surat Thani, Thailand</p>
+        </div>
+
+        <div class="contact-card">
+          <h3>Languages</h3>
+
+          <p>🇬🇧 English — Professional</p>
+          <p>🇲🇲 Burmese — Native</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+     FOOTER
+========================= -->
+
+    <footer>© 2026 Ye Ko Htet • Network/System Engineer Portfolio</footer>
+
+    <!-- =========================
+     JAVASCRIPT
+========================= -->
+
+    <script>
+      const animatedCards = document.querySelectorAll(
+        ".about-card, .skill-card, .timeline-content, .cert-card, .contact-card",
+      );
+
+      window.addEventListener("scroll", () => {
+        animatedCards.forEach((card) => {
+          const cardTop = card.getBoundingClientRect().top;
+
+          if (cardTop < window.innerHeight - 100) {
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0px)";
+          }
+        });
+      });
+
+      animatedCards.forEach((card) => {
+        card.style.opacity = "0";
+        card.style.transform = "translateY(40px)";
+        card.style.transition = "all 0.8s ease";
+      });
+    </script>
+  </body>
+</html>
