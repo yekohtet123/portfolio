@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Ye Ko Htet | Network/System Engineer</title>
+    <title>Ye Ko Htet | Network Engineer</title>
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
 
@@ -16,7 +16,6 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
       }
 
       html {
@@ -24,9 +23,24 @@
       }
 
       body {
-        background: #0b1120;
+        background: #050816;
         color: white;
+        font-family: "Poppins", sans-serif;
         overflow-x: hidden;
+      }
+
+      /* =========================
+   ANIMATED NETWORK BACKGROUND
+========================= */
+
+      #network-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.35;
       }
 
       /* =========================
@@ -35,30 +49,31 @@
 
       nav {
         position: fixed;
+        width: 100%;
         top: 0;
         left: 0;
-        width: 100%;
+        z-index: 999;
         padding: 20px 8%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: rgba(11, 17, 32, 0.92);
+        background: rgba(5, 8, 22, 0.82);
         backdrop-filter: blur(12px);
-        z-index: 1000;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(0, 255, 255, 0.1);
       }
 
       .logo {
         font-size: 28px;
-        font-weight: 800;
-        color: #38bdf8;
-        letter-spacing: 1px;
+        color: #00ffff;
+        font-family: "Orbitron", sans-serif;
+        font-weight: 700;
+        letter-spacing: 2px;
       }
 
       .nav-links {
         display: flex;
-        list-style: none;
         gap: 30px;
+        list-style: none;
       }
 
       .nav-links a {
@@ -69,7 +84,7 @@
       }
 
       .nav-links a:hover {
-        color: #38bdf8;
+        color: #00ffff;
       }
 
       /* =========================
@@ -79,10 +94,10 @@
       .hero {
         min-height: 100vh;
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
         padding: 120px 8%;
-        gap: 60px;
+        gap: 70px;
       }
 
       .hero-text {
@@ -90,19 +105,22 @@
       }
 
       .hero-text h3 {
-        color: #38bdf8;
+        color: #00ffff;
         font-size: 24px;
         margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
       }
 
       .hero-text h1 {
         font-size: 72px;
+        font-family: "Orbitron", sans-serif;
         line-height: 1.1;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
       }
 
       .hero-text h1 span {
-        color: #38bdf8;
+        color: #00ffff;
       }
 
       .hero-text p {
@@ -121,32 +139,30 @@
 
       .btn {
         padding: 16px 34px;
-        border-radius: 14px;
+        border-radius: 12px;
         text-decoration: none;
         font-weight: 600;
         transition: 0.3s;
-        display: inline-block;
       }
 
       .primary-btn {
-        background: #38bdf8;
-        color: #0b1120;
+        background: #00ffff;
+        color: #050816;
       }
 
       .primary-btn:hover {
-        background: #0ea5e9;
         transform: translateY(-5px);
+        box-shadow: 0 0 25px #00ffff;
       }
 
       .secondary-btn {
-        border: 2px solid #38bdf8;
-        color: #38bdf8;
+        border: 2px solid #00ffff;
+        color: #00ffff;
       }
 
       .secondary-btn:hover {
-        background: #38bdf8;
-        color: #0b1120;
-        transform: translateY(-5px);
+        background: #00ffff;
+        color: #050816;
       }
 
       /* PROFILE IMAGE */
@@ -155,7 +171,6 @@
         flex: 1;
         display: flex;
         justify-content: center;
-        align-items: center;
       }
 
       .hero-image img {
@@ -163,16 +178,11 @@
         height: 380px;
         object-fit: cover;
         border-radius: 50%;
-        border: 6px solid #38bdf8;
+        border: 5px solid #00ffff;
         box-shadow:
-          0 0 25px rgba(56, 189, 248, 0.5),
-          0 0 60px rgba(56, 189, 248, 0.25);
+          0 0 20px #00ffff,
+          0 0 60px rgba(0, 255, 255, 0.4);
         animation: float 4s ease-in-out infinite;
-        transition: 0.4s;
-      }
-
-      .hero-image img:hover {
-        transform: scale(1.04);
       }
 
       @keyframes float {
@@ -186,7 +196,7 @@
       }
 
       /* =========================
-   GENERAL SECTION
+   SECTIONS
 ========================= */
 
       section {
@@ -200,81 +210,53 @@
 
       .section-title h2 {
         font-size: 48px;
+        font-family: "Orbitron", sans-serif;
         margin-bottom: 10px;
+        color: #00ffff;
       }
 
       .section-title p {
         color: #94a3b8;
-        font-size: 17px;
       }
 
       /* =========================
-   ABOUT
+   CARDS
 ========================= */
 
-      .about-grid {
+      .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 30px;
       }
 
-      .about-card {
-        background: #111827;
-        padding: 40px;
+      .card {
+        background: rgba(15, 23, 42, 0.75);
+        border: 1px solid rgba(0, 255, 255, 0.1);
+        padding: 35px;
         border-radius: 24px;
         transition: 0.4s;
+        backdrop-filter: blur(10px);
       }
 
-      .about-card:hover {
+      .card:hover {
         transform: translateY(-10px);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        border-color: #00ffff;
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
       }
 
-      .about-card h3 {
-        color: #38bdf8;
-        margin-bottom: 20px;
-        font-size: 28px;
+      .card h3 {
+        color: #00ffff;
+        margin-bottom: 18px;
+        font-size: 24px;
       }
 
-      .about-card p {
+      .card p {
         color: #cbd5e1;
         line-height: 1.9;
       }
 
       /* =========================
-   SKILLS
-========================= */
-
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 25px;
-      }
-
-      .skill-card {
-        background: #111827;
-        padding: 35px;
-        border-radius: 22px;
-        transition: 0.4s;
-      }
-
-      .skill-card:hover {
-        background: #38bdf8;
-        color: #0b1120;
-        transform: translateY(-10px);
-      }
-
-      .skill-card h3 {
-        margin-bottom: 15px;
-        font-size: 22px;
-      }
-
-      .skill-card p {
-        line-height: 1.8;
-      }
-
-      /* =========================
-   EXPERIENCE TIMELINE
+   TIMELINE
 ========================= */
 
       .timeline {
@@ -287,9 +269,9 @@
         content: "";
         position: absolute;
         left: 50%;
-        width: 4px;
+        width: 3px;
         height: 100%;
-        background: #38bdf8;
+        background: #00ffff;
         transform: translateX(-50%);
       }
 
@@ -309,26 +291,25 @@
       }
 
       .timeline-content {
-        background: #111827;
+        background: rgba(15, 23, 42, 0.8);
+        border: 1px solid rgba(0, 255, 255, 0.1);
         padding: 30px;
         border-radius: 24px;
         transition: 0.4s;
       }
 
       .timeline-content:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        border-color: #00ffff;
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
       }
 
       .timeline-content h3 {
-        color: #38bdf8;
+        color: #00ffff;
         margin-bottom: 10px;
-        font-size: 24px;
       }
 
       .timeline-content h4 {
         margin-bottom: 15px;
-        color: #f8fafc;
       }
 
       .timeline-content p {
@@ -337,65 +318,16 @@
       }
 
       /* =========================
-   CERTIFICATIONS
-========================= */
-
-      .cert-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 25px;
-      }
-
-      .cert-card {
-        background: #111827;
-        padding: 35px;
-        border-radius: 22px;
-        text-align: center;
-        transition: 0.4s;
-      }
-
-      .cert-card:hover {
-        background: #38bdf8;
-        color: #0b1120;
-        transform: translateY(-10px);
-      }
-
-      .cert-card h3 {
-        margin-bottom: 10px;
-        font-size: 26px;
-      }
-
-      /* =========================
    CONTACT
 ========================= */
 
-      .contact-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 30px;
+      .contact-box {
+        text-align: center;
       }
 
-      .contact-card {
-        background: #111827;
-        padding: 40px;
-        border-radius: 24px;
-        transition: 0.4s;
-      }
-
-      .contact-card:hover {
-        transform: translateY(-8px);
-      }
-
-      .contact-card h3 {
-        color: #38bdf8;
-        margin-bottom: 20px;
-        font-size: 28px;
-      }
-
-      .contact-card p {
-        color: #cbd5e1;
-        margin-bottom: 15px;
-        line-height: 1.8;
+      .contact-box p {
+        margin: 15px 0;
+        font-size: 18px;
       }
 
       /* =========================
@@ -420,7 +352,7 @@
         }
 
         .hero-text h1 {
-          font-size: 54px;
+          font-size: 52px;
         }
 
         .nav-links {
@@ -447,9 +379,9 @@
   </head>
 
   <body>
-    <!-- =========================
-     NAVBAR
-========================= -->
+    <canvas id="network-canvas"></canvas>
+
+    <!-- NAVBAR -->
 
     <nav>
       <div class="logo">YE KO HTET</div>
@@ -458,28 +390,23 @@
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#certifications">Certifications</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
-    <!-- =========================
-     HERO
-========================= -->
+    <!-- HERO -->
 
     <section class="hero">
       <div class="hero-text">
         <h3>Network / System Engineer</h3>
 
-        <h1>Ye Ko <span>Htet</span></h1>
+        <h1>YE KO <span>HTET</span></h1>
 
         <p>
-          Network Engineer with 8 years of hands-on experience in enterprise
-          networking, system maintenance, infrastructure management, routing,
-          switching, network security, VPN connectivity, and server
-          administration. Experienced in troubleshooting infrastructure issues,
-          maintaining secure operations, and supporting enterprise production
-          environments.
+          Experienced Network Engineer with 8 years of expertise in enterprise
+          networking, routing, switching, VPN technologies, network security,
+          cloud infrastructure, and IT systems management. Specialized in
+          maintaining secure and reliable enterprise operations.
         </p>
 
         <div class="hero-buttons">
@@ -493,30 +420,27 @@
       </div>
     </section>
 
-    <!-- =========================
-     ABOUT
-========================= -->
+    <!-- ABOUT -->
 
     <section id="about">
       <div class="section-title">
-        <h2>About Me</h2>
+        <h2>ABOUT ME</h2>
         <p>Professional Summary</p>
       </div>
 
-      <div class="about-grid">
-        <div class="about-card">
-          <h3>Profile</h3>
+      <div class="grid">
+        <div class="card">
+          <h3>PROFILE</h3>
 
           <p>
-            Experienced Network/System Engineer specializing in enterprise
-            networking, routing, switching technologies, SD-WAN, VPN
-            connectivity, network security, cloud infrastructure, server
-            administration, and IT infrastructure systems.
+            Enterprise Network/System Engineer experienced in Cisco, Juniper,
+            VPN connectivity, routing protocols, firewalls, virtualization,
+            Linux administration, and infrastructure systems.
           </p>
         </div>
 
-        <div class="about-card">
-          <h3>Education</h3>
+        <div class="card">
+          <h3>EDUCATION</h3>
 
           <p>
             Bachelor of Electronics and Communication Engineering
@@ -527,51 +451,43 @@
       </div>
     </section>
 
-    <!-- =========================
-     SKILLS
-========================= -->
+    <!-- SKILLS -->
 
     <section id="skills">
       <div class="section-title">
-        <h2>Technical Skills</h2>
-        <p>Technologies & Expertise</p>
+        <h2>TECHNICAL SKILLS</h2>
+        <p>Core Expertise</p>
       </div>
 
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h3>Enterprise Networking</h3>
-          <p>Routing, Switching, SD-WAN, MPLS, OSPF, BGP, EIGRP</p>
+      <div class="grid">
+        <div class="card">
+          <h3>NETWORKING</h3>
+          <p>Routing, Switching, MPLS, SD-WAN, OSPF, BGP, EIGRP</p>
         </div>
 
-        <div class="skill-card">
-          <h3>Security & VPN</h3>
-          <p>Firewalls, ACLs, NAT, VPN Connectivity, Cisco ASA, Juniper SRX</p>
+        <div class="card">
+          <h3>SECURITY</h3>
+          <p>Firewalls, ACLs, NAT, VPN, Cisco ASA, Juniper SRX</p>
         </div>
 
-        <div class="skill-card">
-          <h3>Cloud & Virtualization</h3>
-          <p>
-            Linux Administration, Proxmox, Virtual Infrastructure Management
-          </p>
+        <div class="card">
+          <h3>CLOUD & SYSTEMS</h3>
+          <p>Linux, Proxmox, Server Administration, Virtualization</p>
         </div>
 
-        <div class="skill-card">
-          <h3>Infrastructure Systems</h3>
-          <p>
-            CCTV, VOIP, Structured Cabling, Technical Support & IT Operations
-          </p>
+        <div class="card">
+          <h3>INFRASTRUCTURE</h3>
+          <p>CCTV, VOIP, Structured Cabling, Technical Support</p>
         </div>
       </div>
     </section>
 
-    <!-- =========================
-     EXPERIENCE
-========================= -->
+    <!-- EXPERIENCE -->
 
     <section id="experience">
       <div class="section-title">
-        <h2>Work Experience</h2>
-        <p>Professional Career Journey</p>
+        <h2>WORK EXPERIENCE</h2>
+        <p>Professional Journey</p>
       </div>
 
       <div class="timeline">
@@ -582,10 +498,9 @@
             <h4>Nerdtronics Thailand · 2025 - Present</h4>
 
             <p>
-              Managed office IoT systems, VPN connectivity, server
-              administration, CCTV systems, network infrastructure, VOIP
-              services, Apple development environment, and operational
-              production support.
+              Managed IoT systems, VPN infrastructure, VOIP systems, CCTV
+              installations, server administration, and office network
+              infrastructure.
             </p>
           </div>
         </div>
@@ -597,9 +512,9 @@
             <h4>Advance Telematics Solution · 2022 - 2023</h4>
 
             <p>
-              Configured Cisco/Juniper devices, implemented MPLS/VPN solutions,
-              managed F5 load balancing, and supported enterprise LAN/WAN
-              infrastructures.
+              Configured Cisco & Juniper devices, implemented MPLS/VPN
+              solutions, managed F5 load balancing, and maintained enterprise
+              LAN/WAN systems.
             </p>
           </div>
         </div>
@@ -612,60 +527,32 @@
 
             <p>
               Provided L1/L2 support, configured Dell switches, Nuage routers,
-              F5 load balancers, Syslog servers, and monitored provider edge
-              routing systems.
+              F5 load balancers, and provider edge routing systems.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- =========================
-     CERTIFICATIONS
-========================= -->
-
-    <section id="certifications">
-      <div class="section-title">
-        <h2>Certifications</h2>
-        <p>Professional Qualifications</p>
-      </div>
-
-      <div class="cert-grid">
-        <div class="cert-card">
-          <h3>CCNA</h3>
-
-          <p>Cisco Certified Network Associate — 2019</p>
-        </div>
-
-        <div class="cert-card">
-          <h3>CCNP</h3>
-
-          <p>Cisco Certified Network Professional — Ongoing</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-     CONTACT
-========================= -->
+    <!-- CONTACT -->
 
     <section id="contact">
       <div class="section-title">
-        <h2>Contact</h2>
-        <p>Get In Touch</p>
+        <h2>CONTACT</h2>
+        <p>Let's Connect</p>
       </div>
 
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>Contact Information</h3>
+      <div class="grid">
+        <div class="card contact-box">
+          <h3>CONTACT INFO</h3>
 
           <p>📧 yekohtet.it@gmail.com</p>
           <p>📱 +66 096 952 0345</p>
           <p>📍 Surat Thani, Thailand</p>
         </div>
 
-        <div class="contact-card">
-          <h3>Languages</h3>
+        <div class="card contact-box">
+          <h3>LANGUAGES</h3>
 
           <p>🇬🇧 English — Professional</p>
           <p>🇲🇲 Burmese — Native</p>
@@ -673,36 +560,101 @@
       </div>
     </section>
 
-    <!-- =========================
-     FOOTER
-========================= -->
-
     <footer>© 2026 Ye Ko Htet • Network/System Engineer Portfolio</footer>
 
-    <!-- =========================
-     JAVASCRIPT
-========================= -->
-
     <script>
-      const animatedCards = document.querySelectorAll(
-        ".about-card, .skill-card, .timeline-content, .cert-card, .contact-card",
-      );
+      /* =========================
+   NETWORK ANIMATION
+========================= */
 
-      window.addEventListener("scroll", () => {
-        animatedCards.forEach((card) => {
-          const cardTop = card.getBoundingClientRect().top;
+      const canvas = document.getElementById("network-canvas");
+      const ctx = canvas.getContext("2d");
 
-          if (cardTop < window.innerHeight - 100) {
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0px)";
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      let particles = [];
+
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 2;
+          this.speedX = Math.random() * 1 - 0.5;
+          this.speedY = Math.random() * 1 - 0.5;
+        }
+
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+
+          if (this.x > canvas.width || this.x < 0) {
+            this.speedX *= -1;
           }
-        });
-      });
 
-      animatedCards.forEach((card) => {
-        card.style.opacity = "0";
-        card.style.transform = "translateY(40px)";
-        card.style.transition = "all 0.8s ease";
+          if (this.y > canvas.height || this.y < 0) {
+            this.speedY *= -1;
+          }
+        }
+
+        draw() {
+          ctx.fillStyle = "#00ffff";
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+
+      function init() {
+        particles = [];
+
+        for (let i = 0; i < 100; i++) {
+          particles.push(new Particle());
+        }
+      }
+
+      function connect() {
+        for (let a = 0; a < particles.length; a++) {
+          for (let b = a; b < particles.length; b++) {
+            let dx = particles[a].x - particles[b].x;
+            let dy = particles[a].y - particles[b].y;
+
+            let distance = dx * dx + dy * dy;
+
+            if (distance < 12000) {
+              ctx.strokeStyle = "rgba(0,255,255,0.08)";
+              ctx.lineWidth = 1;
+
+              ctx.beginPath();
+              ctx.moveTo(particles[a].x, particles[a].y);
+              ctx.lineTo(particles[b].x, particles[b].y);
+              ctx.stroke();
+            }
+          }
+        }
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        particles.forEach((particle) => {
+          particle.update();
+          particle.draw();
+        });
+
+        connect();
+
+        requestAnimationFrame(animate);
+      }
+
+      init();
+      animate();
+
+      window.addEventListener("resize", () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        init();
       });
     </script>
   </body>
